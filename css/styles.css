@@ -1,15 +1,15 @@
 :root {
-  --primary-color: #007af3;
+  --primary-color: #007AF3;
 }
 
 body {
-  background-color: #f2f2f2;
+  background: #F2F2F2;
   margin: 0;
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins";
 }
 
 .navbar {
-  background-color: white;
+  background: white;
   padding: 1em;
 }
 .navbar .logo {
@@ -45,7 +45,7 @@ ul {
 }
 
 section {
-  padding: 5em;
+  padding: 5em 2em;
 }
 
 .hero {
@@ -61,10 +61,11 @@ section {
 .left-col h1 {
   font-size: 2.5em;
   line-height: 1.3em;
-  margin-top: 0.23em;
+  margin-top: 0.2em;
 }
 .left-col .primary-cta {
-  background-color: var(--primary-color);
+  background: var(--primary-color);
+  color: white;
   text-decoration: none;
   padding: 0.6em 1.3em;
   font-size: 1.4em;
@@ -85,14 +86,16 @@ section {
   margin-top: 3em;
 }
 
-section.features {
-  background-color: #20272e;
+section.features-section {
+  background: #20272E;
   color: white;
 }
 
 ul.features-list {
   margin: 0;
   padding-left: 0.1em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
 }
 ul.features-list li {
   font-size: 1.1em;
@@ -102,35 +105,35 @@ ul.features-list li {
 }
 ul.features-list li:before {
   content: "";
-  position: absolute;
   left: -2em;
+  position: absolute;
   width: 20px;
   height: 20px;
-  background-image: url("../images/bullet.svg");
+  background-image: url("https://assets.codepen.io/2621168/bullet.svg");
   background-size: contain;
   margin-right: 0.5em;
 }
 
-.features img {
+.features-section img {
   display: none;
 }
 
-.testimonial {
-  background-color: var(--primary-color);
+.testimonials-section {
+  background: var(--primary-color);
   color: white;
 }
-.testimonial ul li {
-  background-color: #006bdc;
+.testimonials-section li {
+  background: #006BD6;
   text-align: center;
   padding: 2em 1em;
   width: 80%;
   margin: 0 auto 5em auto;
   border-radius: 1em;
 }
-.testimonial ul li img {
+.testimonials-section li img {
   width: 5em;
   height: 5em;
-  border: 5px solid #006bdc;
+  border: 5px solid #006BD6;
   border-radius: 50%;
   margin-top: -4.5em;
 }
@@ -175,16 +178,16 @@ iframe {
 }
 
 nav.menu-btn {
-  position: block;
+  display: block;
 }
 
 nav {
   position: fixed;
   z-index: 999;
-  width: 60%;
+  width: 66%;
   right: 0;
   top: 0;
-  background-color: #20272e;
+  background: #20272E;
   height: 100vh;
   padding: 1em;
 }
@@ -199,7 +202,7 @@ nav li a {
   font-size: 1.3em;
   text-align: right;
 }
-nav li:hover {
+nav li a:hover {
   font-weight: bold;
 }
 
@@ -207,4 +210,174 @@ nav li:hover {
   float: right;
   margin: 0.5em;
   cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) {
+  .mobile-menu, .mobile-menu-exit {
+    display: none;
+  }
+
+  .navbar .container {
+    display: grid;
+    grid-template-columns: 180px auto;
+    -webkit-box-pack: unset;
+        -ms-flex-pack: unset;
+            justify-content: unset;
+  }
+
+  .navbar nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    background: none;
+    position: unset;
+    height: auto;
+    width: 100%;
+    padding: 0;
+  }
+  .navbar nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .navbar nav a {
+    color: black;
+    font-size: 1em;
+    padding: 0.1em 1em;
+  }
+  .navbar nav ul.primary-nav {
+    margin: 0;
+  }
+  .navbar nav li.current a {
+    font-weight: bold;
+  }
+  .navbar nav li.go-premium-cta a {
+    color: var(--primary-color);
+    border: 3px solid var(--primary-color);
+    font-weight: bold;
+    border-radius: 5em;
+    margin-top: -0.2em;
+  }
+  .navbar nav li.go-premium-cta a:hover {
+    background: var(--primary-color);
+    color: white;
+  }
+}
+@media only screen and (min-width: 1080px) {
+  .container {
+    width: 1080px;
+    margin: 0 auto;
+  }
+
+  section {
+    padding: 10em 4em;
+  }
+
+  .hero .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    text-align: left;
+  }
+  .hero .container .left-col {
+    margin: 3em 3em 0 5em;
+  }
+  .hero .container .left-col h1 {
+    font-size: 3em;
+    width: 90%;
+  }
+
+  .hero-img {
+    width: 30%;
+    margin-right: 8em;
+  }
+
+  .hero-cta {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .primary-cta {
+    margin-right: 1em;
+  }
+
+  ul.features-list {
+    display: block;
+    margin-left: 5em;
+  }
+  ul.features-list li {
+    font-size: 1.4em;
+  }
+  ul.features-list li:before {
+    width: 30px;
+    height: 30px;
+  }
+
+  .features-section {
+    position: relative;
+  }
+
+  .features-section img {
+    display: block;
+    position: absolute;
+    right: 0;
+    width: 350px;
+    bottom: -2em;
+  }
+
+  .testimonials-section ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .testimonials-section ul li {
+    margin: 0 1em;
+  }
+
+  .contact-section {
+    position: relative;
+  }
+  .contact-section .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .contact-right {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 45%;
+    height: 100%;
+  }
+  .contact-right iframe {
+    height: 100%;
+  }
+}
+@media only screen and (min-width: 1450px) {
+  .features-section:before {
+    content: "";
+    position: absolute;
+    width: 10%;
+    height: 20em;
+    background: var(--primary-color);
+    left: 0;
+    top: -4em;
+  }
+  .features-section:after {
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 20em;
+    background: url("https://assets.codepen.io/2621168/dots.svg") no-repeat;
+    left: 4.5em;
+    top: 2em;
+  }
 }/*# sourceMappingURL=styles.css.map */
